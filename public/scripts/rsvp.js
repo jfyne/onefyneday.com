@@ -25,7 +25,9 @@ var rsvp = new Vue({
         response: 'yes',
         message: '',
         responded: false,
-        loading: false
+        loading: false,
+        success: false,
+        error: false
     },
     methods: {
         onSubmit: async function (message, event) {

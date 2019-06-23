@@ -119,7 +119,9 @@
                 try {
                     let app = firebase.app();
                     let features = ['firestore'].filter(feature => typeof app[feature] === 'function');
-                    firebase.firestore().enablePersistence().then(() => console.log('Initialised'));
+                    firebase.firestore().enablePersistence({
+                        synchronizeTabs: true
+                    }).then(() => console.log('Initialised'));
                 } catch (e) {
                     console.error(e);
                 }
