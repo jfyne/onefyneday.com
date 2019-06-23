@@ -1,13 +1,23 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Ali & Josh 2020</title>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ali & Josh 2020</title>
+
         <link href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="/style.css" type="text/css">
+
+        <!-- update the version number as needed -->
+        <script defer src="/__/firebase/6.2.2/firebase-app.js"></script>
+        <!-- include only the Firebase features as you need -->
+        <script defer src="/__/firebase/6.2.2/firebase-firestore.js"></script>
+        <!-- initialize the SDK after all desired features are loaded -->
+        <script defer src="/__/firebase/init.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     </head>
     <body>
-
         <header>
             <div class="splash">
                 <h1>Ali & Josh</h1>
@@ -64,37 +74,56 @@
             </section>
 
             <section id="rsvp">
-                <form action="//rsvp" method="post">
+                <h2 v-if="!responded">RSVP</h2>
+                <form v-if="!responded" v-on:submit.prevent="onSubmit">
                     <fieldset>
                         <legend>Can you come?</legend>
                         <label>
-                            <input type="radio" name="response" value="yes" required>
+                            <input v-model="response" type="radio" name="response" value="yes" required>
                             Yes
                         </label>
                         <label>
-                            <input type="radio" name="response" value="no" required>
+                            <input v-model="response" type="radio" name="response" value="no" required>
                             No
                         </label>
                     </fieldset>
                     <fieldset>
                         <legend>Your unique code</legend>
-                        <input type="text" name="code" required>
+                        <input v-model="code" type="text" name="code" required>
                     </fieldset>
                     <fieldset>
                         <legend>Leave us a message</legend>
-                        <textarea name="message"></textarea>
+                        <textarea v-model="message" name="message"></textarea>
                     </fieldset>
                     <button type="submit">RSVP</button>
                 </form>
+                <loading v-if="loading"></loading>
+                <div v-if="success">
+                    <h2>Thanks for responding!</h2>
+                </div>
+                <div v-if="error">
+                    <h2>Something went wrong... Can you try again?</h2>
+                </div>
             </section>
 
             <footer>
                 <p>
-                    Contact <a href="mailto:alisonmarypeters+wedding@gmail.com">Ali</a> or <a href="mailto:josh.fyne+wedding@gmail.com">Josh</a> for questions
+                Contact <a href="mailto:alisonmarypeters+wedding@gmail.com">Ali</a> or <a href="mailto:josh.fyne+wedding@gmail.com">Josh</a> for questions
                 </p>
             </footer>
         </div>
 
-        <script src="/rsvp.js"></script>
+        <script src="/scripts/rsvp.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                try {
+                    let app = firebase.app();
+                    let features = ['firestore'].filter(feature => typeof app[feature] === 'function');
+                    firebase.firestore().enablePersistence().then(() => console.log('Initialised'));
+                } catch (e) {
+                    console.error(e);
+                }
+            });
+        </script>
     </body>
 </html>
