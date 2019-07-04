@@ -21,8 +21,12 @@ Vue.component('loading', {
 var rsvp = new Vue({
     el: '#rsvp',
     data: {
-        code: '',
+        names: '',
         response: 'yes',
+        email: '',
+        phone: '',
+        number: 1,
+        dietary: 'None',
         message: '',
         responded: false,
         loading: false,
@@ -36,7 +40,15 @@ var rsvp = new Vue({
             this.loading = true;
             let collection = firebase.firestore().collection('responses');
             try {
-                await collection.doc(this.code).set({code: this.code, response: this.response, message: this.message});
+                await collection.doc(this.email).set({
+                    names: this.names,
+                    response: this.response,
+                    email: this.email,
+                    phone: this.phone,
+                    number: this.number,
+                    dietary: this.dietary,
+                    message: this.message
+                });
             } catch (err) {
                 console.log(err);
                 this.loading = false;

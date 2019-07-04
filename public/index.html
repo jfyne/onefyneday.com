@@ -77,6 +77,10 @@
                 <h2 v-if="!responded">RSVP</h2>
                 <form v-if="!responded" v-on:submit.prevent="onSubmit">
                     <fieldset>
+                        <legend>Name(s)</legend>
+                        <input v-model="names" type="text" name="names" required>
+                    </fieldset>
+                    <fieldset>
                         <legend>Can you come?</legend>
                         <label>
                             <input v-model="response" type="radio" name="response" value="yes" required>
@@ -88,8 +92,20 @@
                         </label>
                     </fieldset>
                     <fieldset>
-                        <legend>Your unique code</legend>
-                        <input v-model="code" type="text" name="code" required>
+                        <legend>Email</legend>
+                        <input v-model="email" type="email" name="email" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Phone</legend>
+                        <input v-model="phone" type="tel" name="phone" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Number coming</legend>
+                        <input v-model="number" type="number" name="number" required>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Dietary restrictions</legend>
+                        <input v-model="dietary" type="text" name="dietary" required>
                     </fieldset>
                     <fieldset>
                         <legend>Leave us a message</legend>
