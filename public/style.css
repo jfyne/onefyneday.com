@@ -34,7 +34,7 @@ footer {
   justify-content: center;
   height: 45rem;
   width: 100%;
-  background: url("/bg.svg");
+  background: url("/bg.svg?heart=true");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
