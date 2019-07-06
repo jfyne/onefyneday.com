@@ -18,6 +18,11 @@ body {
   header div.splash {
     height: 20rem;
   }
+
+  header div.splash h1 {
+    margin-top: 11rem;
+    font-size: 4rem;
+  }
 }
 
 header,
