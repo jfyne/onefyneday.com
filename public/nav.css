@@ -13,14 +13,15 @@ nav > #close {
 
 nav > .nav-links {
   position: absolute;
-  top: 3rem;
+  top: 0;
   left: 0;
+  display: flex;
   background: white;
 }
 .nav-links a {
   display: block;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1rem;
   margin: 1rem;
 }
 
@@ -37,6 +38,8 @@ nav > .nav-links {
   nav > #menu:target ~ .nav-links {
     width: 100%;
     height: 100vh;
+    display: block;
+    top: 3rem;
   }
   nav > #menu:target ~ #close {
     display: block;
