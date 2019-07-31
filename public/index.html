@@ -1,202 +1,296 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <meta name="theme-color" content="#ffffff">
-        <link rel="icon" sizes="192x192"  type="image/png" href="/icon.png">
-        <link rel="shortcut icon" type="image/png" href="/icon.png">
-        <link rel="apple-touch-icon" href="/icon.png">
-        <link rel="apple-touch-startup-image" href="/icon.png">
-        <meta name="apple-mobile-web-app-status-bar-style" content="white">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Ali & Josh 2020</title>
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" sizes="192x192" type="image/png" href="/icon.png">
+    <link rel="shortcut icon" type="image/png" href="/icon.png">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <link rel="apple-touch-startup-image" href="/icon.png">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
 
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/style.css?v=1" type="text/css">
-        <link rel="stylesheet" href="/nav.css?v=1" type="text/css">
-        <link rel="stylesheet" href="/timeline.css?v=1" type="text/css">
+    <title>Ali & Josh 2020</title>
 
-        <!-- update the version number as needed -->
-        <script defer src="/__/firebase/6.2.2/firebase-app.js"></script>
-        <!-- include only the Firebase features as you need -->
-        <script defer src="/__/firebase/6.2.2/firebase-firestore.js"></script>
-        <!-- initialize the SDK after all desired features are loaded -->
-        <script defer src="/__/firebase/init.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css?v=1" type="text/css">
+    <link rel="stylesheet" href="/nav.css?v=1" type="text/css">
+    <link rel="stylesheet" href="/timeline.css?v=1" type="text/css">
 
-        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a id="menu" href="#menu">
-                    <div class="hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </a>
-                <a id="close" href="#">
-                    <div class="ex">
-                    </div>
-                </a>
-                <div class="nav-links">
-                    <a href="#rsvp">RSVP</a>
-                    <a href="#itinerary">Itinerary</a>
-                    <a href="#travel">Travel</a>
-                    <a href="#attire">Attire</a>
-                    <a href="#faq">FAQ</a>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/6.2.2/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/6.2.2/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a id="menu" href="#menu">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </a>
+            <a id="close" href="#">
+                <div class="ex">
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#itinerary">Itinerary</a>
+                <a href="#travel">Travel</a>
+                <a href="#rsvp">RSVP</a>
+                <a href="#faq">FAQ</a>
                 </ul>
-            </nav>
-            <div class="splash">
-                <h1>Ali & Josh</h1>
-            </div>
-        </header>
-
-        <div class="container">
-
-            <section id="itinerary">
-                <h2>Itinerary</h2>
-                <div class="timeline">
-                    <h2>Friday April 17 2020</h2>
-                    <ul>
-                        <li>
-                            <h3>Reykjavík</h3>
-                            <p>Catch the wedding bus</p>
-                            <time>10am</time>
-                        </li>
-                        <li>
-                            <h3>Tour</h3>
-                            <p>Tour some of Icelend</p>
-                            <time>Daytime</time>
-                        </li>
-                        <li>
-                            <h3>Arnarstapi</h3>
-                            <p>Arrive at the Hotel</p>
-                            <time>5pm</time>
-                        </li>
-                        <li>
-                            <h3>Rehearsal dinner</h3>
-                            <p>Come hang out and have a great time</p>
-                            <time>8pm</time>
-                        </li>
-                    </ul>
-
-                    <h2>Saturday April 18 2020</h2>
-                    <ul>
-                        <li>
-                            <h3>Hotel</h3>
-                            <p>Ride to the ceremony</p>
-                            <time>10am</time>
-                        </li>
-                        <li>
-                            <h3>Ceremony</h3>
-                            <p>Getting hitched</p>
-                            <time>11am</time>
-                        </li>
-                        <li>
-                            <h3>Tour</h3>
-                            <p>More fun touring</p>
-                            <time>Daytime</time>
-                        </li>
-                        <li>
-                            <h3>Arnarstapi</h3>
-                            <p>Back to the hotel</p>
-                            <time>3pm</time>
-                        </li>
-                        <li>
-                            <h3>Reception</h3>
-                            <p>Wedding celebration</p>
-                            <time>6pm</time>
-                        </li>
-                    </ul>
-
-                    <h2>Sunday April 19 2020</h2>
-                    <ul>
-                        <li>
-                            <h3>Hotel</h3>
-                            <p>Catch a ride back to Reykjavík</p>
-                            <time>8am</time>
-                        </li>
-                        <li>
-                            <h3>Reykjavík</h3>
-                            <p>Arrive back</p>
-                            <time>11am</time>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <section id="rsvp">
-                <h2 v-if="!responded">RSVP</h2>
-                <form v-if="!responded" v-on:submit.prevent="onSubmit">
-                    <fieldset>
-                        <legend>Name(s)</legend>
-                        <input v-model="names" type="text" name="names" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Can you come?</legend>
-                        <label>
-                            <input v-model="response" type="radio" name="response" value="yes" required>
-                            Yes
-                        </label>
-                        <label>
-                            <input v-model="response" type="radio" name="response" value="no" required>
-                            No
-                        </label>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Email</legend>
-                        <input v-model="email" type="email" name="email" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Phone</legend>
-                        <input v-model="phone" type="tel" name="phone" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Number coming</legend>
-                        <input v-model="number" type="number" name="number" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Dietary restrictions</legend>
-                        <input v-model="dietary" type="text" name="dietary" required>
-                    </fieldset>
-                    <fieldset>
-                        <legend>Leave us a message</legend>
-                        <textarea v-model="message" name="message"></textarea>
-                    </fieldset>
-                    <button type="submit">RSVP</button>
-                </form>
-                <loading v-if="loading"></loading>
-                <div v-if="success">
-                    <h2>Thanks for responding!</h2>
-                </div>
-                <div v-if="error">
-                    <h2>Something went wrong... Can you try again?</h2>
-                </div>
-            </section>
-
-            <footer>
-                <p>
-                Contact <a href="mailto:alisonmarypeters+wedding@gmail.com">Ali</a> or <a href="mailto:josh.fyne+wedding@gmail.com">Josh</a> for questions
-                </p>
-            </footer>
+        </nav>
+        <div class="splash">
+            <h1>Ali & Josh</h1>
         </div>
+    </header>
 
-        <script src="/scripts/rsvp.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                try {
-                    let app = firebase.app();
-                    let features = ['firestore'].filter(feature => typeof app[feature] === 'function');
-                    firebase.firestore().enablePersistence({
-                        synchronizeTabs: true
-                    }).then(() => console.log('Initialised'));
-                } catch (e) {
-                    console.error(e);
-                }
-            });
-        </script>
-    </body>
+    <div class="container">
+
+        <section id="invite">
+            <p>Together with their families</p>
+            <h2>Alison Peters<br />&<br />Josh Fyne</h2>
+            <p>Invite you to their wedding celebration</p>
+            <h2>18th of April 2020</h2>
+            <h2>Arnarstapi, Iceland</h2>
+        </section>
+
+        <div class="break"></div>
+
+        <section id="itinerary">
+            <h2>Itinerary</h2>
+            <div class="timeline">
+                <h2>Friday April 17 2020</h2>
+                <ul>
+                    <li>
+                        <h3>Reykjavík</h3>
+                        <p>Catch the wedding bus</p>
+                        <time>10am</time>
+                    </li>
+                    <li>
+                        <h3>Tour</h3>
+                        <p>See the sights</p>
+                        <time>Daytime</time>
+                    </li>
+                    <li>
+                        <h3>Arnarstapi</h3>
+                        <p>Arrive at the Hotel</p>
+                        <time>5pm</time>
+                    </li>
+                    <li>
+                        <h3>Rehearsal dinner</h3>
+                        <p>Come hang out and have a great time</p>
+                        <time>8pm</time>
+                    </li>
+                </ul>
+
+                <h2>Saturday April 18 2020</h2>
+                <ul>
+                    <li>
+                        <h3>Hotel</h3>
+                        <p>Ride to the ceremony</p>
+                        <time>10am</time>
+                    </li>
+                    <li>
+                        <h3>Ceremony</h3>
+                        <p>Getting hitched</p>
+                        <time>11am</time>
+                    </li>
+                    <li>
+                        <h3>Tour</h3>
+                        <p>More fun touring</p>
+                        <time>Daytime</time>
+                    </li>
+                    <li>
+                        <h3>Arnarstapi</h3>
+                        <p>Back to the hotel</p>
+                        <time>3pm</time>
+                    </li>
+                    <li>
+                        <h3>Reception</h3>
+                        <p>Wedding celebration</p>
+                        <time>6pm</time>
+                    </li>
+                </ul>
+
+                <h2>Sunday April 19 2020</h2>
+                <ul>
+                    <li>
+                        <h3>Hotel</h3>
+                        <p>Catch a ride back to Reykjavík</p>
+                        <time>8am</time>
+                    </li>
+                    <li>
+                        <h3>Reykjavík</h3>
+                        <p>Arrive back</p>
+                        <time>11am</time>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="break"></div>
+
+        <section id="travel">
+            <h2>Travel & Accomodation</h2>
+            <p>
+                We are getting married in a remote part of Iceland so we are reserving a bus that you can
+                book a seat on to avoid having to rent a car. Icelandic road conditions vary greatly so we highly
+                recommend you book a seat on the bus. The bus will take you on a fun tour with lunch provided and
+                bring you to our wedding venue <a href="https://arnarstapicenter.is/" target="_blank">Arnarstapi
+                    Center</a>.
+            </p>
+            <p>
+                Please reach out to our wedding planner extraordinaire, <em>Hannes Pálsson</em>, by email
+                <a href="mailto:hannes@pinkiceland.is" target="_blank">hannes@pinkiceland.is</a> in order
+                to book your room and reserve a spot on the wedding bus. There are several types of rooms at the venue
+                and Hannes will help you pick the right one.
+            </p>
+            <p>
+                Note, booking your spot on the bus also gives you a ride back to the airport on Sunday, or to
+                Reykjavík so you can continue your Iceland trip. Hannes has graciously offered his travel planning
+                services to any guests who would like to visit Iceland early or extend their stay after the wedding.
+            </p>
+            <p>
+                It is important that everyone is ready to board the bus in Reykjavík
+                at 10am on Friday April 17th. It is recommended that people arrive
+                on Thursday and stay in or near Reykjavík.
+            </p>
+            <p>
+                If you are planning on leaving on the Sunday after the wedding, we won't be
+                able to get you back to the airport for a morning flight. So please don't
+                book don't book a flight intended to leave before midday.
+            </p>
+        </section>
+
+        <div class="break"></div>
+
+        <section id="rsvp">
+            <h2 v-if="!responded">RSVP</h2>
+            <form v-if="!responded" v-on:submit.prevent="onSubmit">
+                <fieldset>
+                    <legend>Name(s)</legend>
+                    <input v-model="names" type="text" name="names" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Can you come?</legend>
+                    <label>
+                        <input v-model="response" type="radio" name="response" value="yes" required>
+                        Yes
+                    </label>
+                    <label>
+                        <input v-model="response" type="radio" name="response" value="no" required>
+                        No
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>Email</legend>
+                    <input v-model="email" type="email" name="email" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Phone</legend>
+                    <input v-model="phone" type="tel" name="phone" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Number coming</legend>
+                    <input v-model="number" type="number" name="number" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Dietary restrictions</legend>
+                    <input v-model="dietary" type="text" name="dietary" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Leave us a message</legend>
+                    <textarea v-model="message" name="message"></textarea>
+                </fieldset>
+                <button type="submit">RSVP</button>
+            </form>
+            <loading v-if="loading"></loading>
+            <div v-if="success">
+                <h2>Thanks for responding!</h2>
+            </div>
+            <div v-if="error">
+                <h2>Something went wrong... Can you try again?</h2>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>FAQ</h2>
+            <article>
+                <h3>What should I wear...</h3>
+                <ul>
+                    <li>
+                        <b>To the tour:</b> Be warm and comfortable. Dress is travel casual. You will be hopping on and
+                        off
+                        the bus to see what Iceland has to offer.
+                    </li>
+                    <li>
+                        <b>To the rehearsal dinner:</b> Casual dinner dress.
+                    </li>
+                    <li>
+                        <b>To the ceremony:</b> Feel free to get creative but we truly want you to be warm and
+                        comfortable.
+                        Ali will be in a wedding dress and likely boots, Josh will be in something a bit fancier than a
+                        black t-shirt. Please dress warm, if you would like to wear a dress or suit we will not stop you
+                        but
+                        please bring layers. The ceremony is going to be outside, some sort of outdoor
+                        shoes are advisable. There is a surprise outting after the ceremony that will be outdoors.
+                    </li>
+                    <li>
+                        <b>To the reception:</b> Whatever wedding guest attire your heart desires. There will be drinks,
+                        food and dancing.
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h3>On plus ones</h3>
+                <p>
+                    Please reach out to us if you had hoped to bring a guest. We have limited space
+                    but its very possible that we will have room. Please just ask us!
+                </p>
+            </article>
+            <article>
+                <h3>On kiddos</h3>
+                <p>
+                    We love your kids very much but have chosen to make our wedding a 21 and over
+                    event. We are happy to assist in finding baby sitting services in Reykjavík if you would like to
+                    travel with your children.
+                </p>
+            </article>
+        </section>
+
+        <footer>
+            <p>
+                Contact <a href="mailto:alisonmarypeters+wedding@gmail.com" target="_blank">Ali</a> or <a
+                    href="mailto:josh.fyne+wedding@gmail.com" target="_blank">Josh</a> for questions
+            </p>
+        </footer>
+    </div>
+
+    <script src="/scripts/rsvp.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            try {
+                let app = firebase.app();
+                let features = ['firestore'].filter(feature => typeof app[feature] === 'function');
+                firebase.firestore().enablePersistence({
+                    synchronizeTabs: true
+                }).then(() => console.log('Initialised'));
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+</body>
+
 </html>
