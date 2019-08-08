@@ -18,20 +18,22 @@ Vue.component('loading', {
     template: '<div class="loader" v-bind:style="containerStyle"><div v-bind:style="spinnerStyle"></div></div>'
 });
 
-var rsvp = new Vue({
+var rsvp = {
     el: '#rsvp',
     data: {
         names: '',
         response: 'yes',
         email: '',
         phone: '',
-        number: 1,
+        number: 0,
+        room: '',
         dietary: 'None',
         message: '',
         responded: false,
         loading: false,
         success: false,
-        error: false
+        error: false,
+        roomOptions: []
     },
     methods: {
         onSubmit: async function (message, event) {
@@ -43,6 +45,7 @@ var rsvp = new Vue({
                 await collection.doc(this.email).set({
                     names: this.names,
                     response: this.response,
+                    room: this.room,
                     email: this.email,
                     phone: this.phone,
                     number: this.number,
@@ -57,6 +60,20 @@ var rsvp = new Vue({
             }
             this.loading = false;
             this.success = true;
+        },
+        watchRooms: async function() {
+            console.log(this.roomOptions);
+            const rooms = firebase.firestore().collection('rooms');
+            await rooms.onSnapshot((snapshot) => {
+                this.roomOptions = [];
+                snapshot.forEach((doc) => {
+                    let room = doc.data();
+                    this.roomOptions.push({name: room.name, value: doc.id});
+                })
+            });
         }
+    },
+    mounted: async function() {
+        this.watchRooms();
     }
-});
+};

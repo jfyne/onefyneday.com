@@ -9,6 +9,7 @@ admin.initializeApp({
 });
 const db = admin.firestore();
 const responsesRef = db.collection('responses');
+const roomsRef = db.collection('rooms');
 
 async function handleResponse(change: any, context: any) {
     // Get an object with the current document value.
@@ -20,9 +21,9 @@ async function handleResponse(change: any, context: any) {
     const snapshot = await responsesRef.get()
     const data = snapshot.docs.map(doc => {
         const d = doc.data()
-        return [d.email, d.names, d.response, d.number, d.phone, d.dietary, d.message];
+        return [d.email, d.names, d.response, d.number, d.phone, d.dietary, d.message, d.message];
     });
-    data.unshift(['Email', 'Names', 'Response', 'Number', 'Phone', 'Dietary', 'Message']);
+    data.unshift(['Email', 'Names', 'Response', 'Number', 'Phone', 'Dietary', 'Message', 'Room']);
 
     const auth = await google.auth.getClient({ scopes: ['https://www.googleapis.com/auth/spreadsheets']});
     const sheets = google.sheets({version: 'v4'});
