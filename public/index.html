@@ -206,43 +206,56 @@
             <h2 v-if="!responded">RSVP</h2>
             <form v-if="!responded" v-on:submit.prevent="onSubmit">
                 <fieldset>
-                    <legend>Name(s)</legend>
+                    <legend>Name(s) *</legend>
                     <input v-model="names" type="text" name="names" required>
                 </fieldset>
                 <fieldset>
-                    <legend>Can you come?</legend>
+                    <legend>Can you come? *</legend>
                     <label>
                         <input v-model="response" type="radio" name="response" value="yes" required>
-                        Yes
+                        <div><p>Yes</p></div>
                     </label>
                     <label>
                         <input v-model="response" type="radio" name="response" value="no" required>
-                        No
+                        <div><p>No</p></div>
                     </label>
                 </fieldset>
                 <fieldset>
                     <legend>Type of room</legend>
-                    <select v-model="room" required name="room">
-                        <option v-for="option in roomOptions"  v-bind:value="option.value">
-                            {{ option.name }}
-                        </option>
-                    </select>
+                    <label v-for="option in roomOptions">
+                        <input v-model="room" type="radio" name="room" v-bind:value="option.value" :disabled="option.available == 0">
+                        <div>
+                            <p>{{option.name}}. {{ option.available }} available. €{{ option.price }} per night.</p>
+                        </div>
+                    </label>
+                    <label>
+                        <input v-model="room" type="radio" name="room" value="third-wheel">
+                        <div>
+                            <p>I've found someone else to room with</p>
+                        </div>
+                    </label>
+                    <label>
+                        <input v-model="room" type="radio" name="room" value="dont-know">
+                        <div>
+                            <p>I don't know yet</p>
+                        </div>
+                    </label>
                 </fieldset>
                 <fieldset>
-                    <legend>Email</legend>
+                    <legend>Email *</legend>
                     <input v-model="email" type="email" name="email" required>
                 </fieldset>
                 <fieldset>
-                    <legend>Phone</legend>
+                    <legend>Phone *</legend>
                     <input v-model="phone" type="tel" name="phone" required>
                 </fieldset>
                 <fieldset>
-                    <legend>Number coming</legend>
+                    <legend>Number coming *</legend>
                     <input v-model="number" type="number" name="number" required>
                 </fieldset>
                 <fieldset>
                     <legend>Dietary restrictions</legend>
-                    <input v-model="dietary" type="text" name="dietary" required>
+                    <input v-model="dietary" type="text" name="dietary">
                 </fieldset>
                 <fieldset>
                     <legend>Leave us a message</legend>

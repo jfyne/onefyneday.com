@@ -68,7 +68,8 @@ var rsvp = {
                 this.roomOptions = [];
                 snapshot.forEach((doc) => {
                     let room = doc.data();
-                    this.roomOptions.push({name: room.name, value: doc.id});
+                    let available = room.available - room.requesters.length;
+                    this.roomOptions.push({name: room.name, value: doc.id, available: available, price: room.price});
                 })
             });
         }

@@ -113,6 +113,19 @@ textarea {
   width: 100%;
 }
 
+label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+label > div p {
+    margin: 0;
+    padding: .5rem;
+}
+label > input[type="radio"] {
+    margin: 0;
+}
+
 @keyframes expand {
   0% {
     width: 0%;
