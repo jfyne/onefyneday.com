@@ -16,7 +16,7 @@ async function handleResponse(change: any, context: any) {
     const document = change.after.exists ? change.after.data() : null;
     console.log(document);
 
-    const pickedRooms: { [key:string]: string[] } = {};
+    const pickedRooms: { [key: string]: string[] } = {};
 
     const snapshot = await responsesRef.get()
     const data = snapshot.docs.map(doc => {
@@ -33,18 +33,18 @@ async function handleResponse(change: any, context: any) {
 }
 
 // Update the reservations lists in the room types.
-async function updateReservations(pickedRooms: { [key:string]: string[]}): Promise<any> {
+async function updateReservations(pickedRooms: { [key: string]: string[] }): Promise<any> {
     const updates: Promise<any>[] = [];
     Object.keys(pickedRooms).map(room => {
-        updates.push(roomsRef.doc(room).set({requesters: pickedRooms[room]}));
+        updates.push(roomsRef.doc(room).update({ requesters: pickedRooms[room] }));
     });
     return Promise.all(updates);
 }
 
 // Write the latest set of responses to the google sheet.
 async function writeSheet(data: string[][]): Promise<any> {
-    const auth = await google.auth.getClient({ scopes: ['https://www.googleapis.com/auth/spreadsheets']});
-    const sheets = google.sheets({version: 'v4'});
+    const auth = await google.auth.getClient({ scopes: ['https://www.googleapis.com/auth/spreadsheets'] });
+    const sheets = google.sheets({ version: 'v4' });
     await sheets.spreadsheets.values.clear({
         spreadsheetId: sid,
         range: 'Responses!A:Z',

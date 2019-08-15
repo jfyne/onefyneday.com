@@ -61,7 +61,7 @@ var rsvp = {
             this.loading = false;
             this.success = true;
         },
-        watchRooms: async function() {
+        watchRooms: async function () {
             console.log(this.roomOptions);
             const rooms = firebase.firestore().collection('rooms');
             await rooms.onSnapshot((snapshot) => {
@@ -70,13 +70,13 @@ var rsvp = {
                     let room = doc.data();
                     let available = room.available - room.requesters.length;
                     if (room.available) {
-                        this.roomOptions.push({name: room.name, value: doc.id, available: available, price: room.price});
+                        this.roomOptions.push({ name: room.name, value: doc.id, available: available, price: room.price });
                     }
                 })
             });
         }
     },
-    mounted: async function() {
+    mounted: async function () {
         this.watchRooms();
     }
 };
