@@ -85,6 +85,10 @@ section > h2 {
   font-weight: normal;
 }
 
+#travel article li {
+  margin-top: 1rem;
+}
+
 #rsvp {
   background: white;
   padding: 1rem;
