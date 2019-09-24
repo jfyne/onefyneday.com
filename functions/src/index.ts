@@ -36,6 +36,9 @@ async function handleResponse(change: any, context: any) {
 async function updateReservations(pickedRooms: { [key: string]: string[] }): Promise<any> {
     const updates: Promise<any>[] = [];
     Object.keys(pickedRooms).map(room => {
+        if (room === "") {
+            return;
+        }
         updates.push(roomsRef.doc(room).update({ requesters: pickedRooms[room] }));
     });
     return Promise.all(updates);
