@@ -1,207 +1,231 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" sizes="192x192" type="image/png" href="/icon.png" />
+        <link rel="shortcut icon" type="image/png" href="/icon.png" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="apple-touch-startup-image" href="/icon.png" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="white" />
 
-    <meta name="theme-color" content="#ffffff">
-    <link rel="icon" sizes="192x192" type="image/png" href="/icon.png">
-    <link rel="shortcut icon" type="image/png" href="/icon.png">
-    <link rel="apple-touch-icon" href="/icon.png">
-    <link rel="apple-touch-startup-image" href="/icon.png">
-    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+        <title>Ali & Josh 2020</title>
 
-    <title>Ali & Josh 2020</title>
+        <link
+            href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/style.css?v=1" type="text/css" />
+        <link rel="stylesheet" href="/nav.css?v=1" type="text/css" />
+        <link rel="stylesheet" href="/timeline.css?v=1" type="text/css" />
 
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Playfair+Display&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css?v=1" type="text/css">
-    <link rel="stylesheet" href="/nav.css?v=1" type="text/css">
-    <link rel="stylesheet" href="/timeline.css?v=1" type="text/css">
+        <script defer src="/__/firebase/6.2.2/firebase-app.js"></script>
+        <script defer src="/__/firebase/6.2.2/firebase-firestore.js"></script>
+        <script defer src="/__/firebase/init.js"></script>
 
-    <script defer src="/__/firebase/6.2.2/firebase-app.js"></script>
-    <script defer src="/__/firebase/6.2.2/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/init.js"></script>
+        <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>-->
+    </head>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-</head>
-
-<body>
-    <header>
-        <nav>
-            <a id="menu" href="#menu">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+    <body>
+        <header>
+            <!--<nav>
+                <a id="menu" href="#menu">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+                <a id="close" href="#">
+                    <div class="ex"></div>
+                </a>
+                <div class="nav-links">
+                    <a href="#itinerary">Itinerary</a>
+                    <a href="#travel">Travel</a>
+                    <a href="#rsvp">RSVP</a>
+                    <a href="#faq">FAQ</a>
                 </div>
-            </a>
-            <a id="close" href="#">
-                <div class="ex">
-                </div>
-            </a>
-            <div class="nav-links">
-                <a href="#itinerary">Itinerary</a>
-                <a href="#travel">Travel</a>
-                <a href="#rsvp">RSVP</a>
-                <a href="#faq">FAQ</a>
-                </ul>
-        </nav>
-        <div class="splash">
-            <h1>Ali & Josh</h1>
-        </div>
-    </header>
-
-    <div class="container">
-
-        <section id="invite">
-            <p>Together with their families</p>
-            <h2>Alison Peters<br />&<br />Josh Fyne</h2>
-            <p>Invite you to their wedding celebration</p>
-            <h2>18th of April 2020</h2>
-            <h2>Arnarstapi, Iceland</h2>
-        </section>
-
-        <section>
-            Travel and exploration has always been a big part of our relationship. One of the first places we visited
-            together
-            was Iceland, we loved it and <em>vowed</em> (😉 😉) to return. Luckily we have got this wedding coming up
-            and thought it
-            would be great to share what we loved so much with everyone else.
-        </section>
-
-        <div class="break"></div>
-
-        <section id="itinerary">
-            <h2>Itinerary</h2>
-
-            <div class="timeline">
-                <h2>Thursday April 16 2020</h2>
-                <ul>
-                    <li>
-                        <h3>Please come to Reykjavík</h3>
-                        <p>So as not to delay us all, please arrive on the 16th or very early on the 17th</p>
-                        <time>Any time you like</time>
-                    </li>
-                </ul>
-                <h2>Friday April 17 2020</h2>
-                <ul>
-                    <li>
-                        <h3>Reykjavík</h3>
-                        <p>Catch the wedding bus</p>
-                        <time>10am</time>
-                    </li>
-                    <li>
-                        <h3>Tour</h3>
-                        <p>Come with us to see some fantastic parts of Iceland, with a stop for lunch</p>
-                        <time>Daytime</time>
-                    </li>
-                    <li>
-                        <h3>Arnarstapi</h3>
-                        <p>Arrive at the Hotel</p>
-                        <time>5pm</time>
-                    </li>
-                    <li>
-                        <h3>Rehearsal dinner</h3>
-                        <p>This is where you rehearse how to eat and drink. You will be tested on this the following
-                            evening.</p>
-                        <time>8pm</time>
-                    </li>
-                </ul>
-
-                <h2>Saturday April 18 2020</h2>
-                <ul>
-                    <li>
-                        <h3>Hotel</h3>
-                        <p>Breakfast provided by the hotel</p>
-                    </li>
-                    <li>
-                        <h3>Hotel</h3>
-                        <p>Ride to the ceremony</p>
-                        <time>10am</time>
-                    </li>
-                    <li>
-                        <h3>Ceremony</h3>
-                        <p>Getting hitched</p>
-                        <time>11am</time>
-                    </li>
-                    <li>
-                        <h3>Sights and lunch</h3>
-                        <p>We try and get some photos in, you try and photo bomb us</p>
-                        <time>Daytime</time>
-                    </li>
-                    <li>
-                        <h3>Arnarstapi</h3>
-                        <p>Back to the hotel</p>
-                        <time>3pm</time>
-                    </li>
-                    <li>
-                        <h3>Reception</h3>
-                        <p>This is it, put that eating and drinking rehearsal into use</p>
-                        <time>6pm</time>
-                    </li>
-                </ul>
-
-                <h2>Sunday April 19 2020</h2>
-                <ul>
-                    <li>
-                        <h3>Hotel</h3>
-                        <p>Breakfast provided by the hotel</p>
-                    </li>
-                    <li>
-                        <h3>Hotel</h3>
-                        <p>Hungover bus to Reykjavík</p>
-                        <time>11am</time>
-                    </li>
-                    <li>
-                        <h3>Reykjavík - BSÍ Bus Terminal</h3>
-                        <p>City drop off</p>
-                        <time>1:30pm</time>
-                    </li>
-                    <li>
-                        <h3>Reykjavík - Keflavík International Airport</h3>
-                        <p>Airport drop off</p>
-                        <time>2:15pm - 2:30pm</time>
-                    </li>
-                </ul>
+            </nav>-->
+            <div class="splash">
+                <h1>Ali & Josh</h1>
             </div>
-        </section>
+        </header>
 
-        <div class="break"></div>
+        <div class="container">
+            <section id="invite">
+                <p>Together with their families</p>
+                <h2>Alison Peters<br />&<br />Josh Fyne</h2>
+                <p>Invite you to their wedding celebration</p>
+                <h2>28th - 30th of May 2021</h2>
+                <h2>Iceland</h2>
+            </section>
 
-        <section id="travel">
-            <h2>Travel & Accommodation</h2>
-            <article>
-                <h3>Travel</h3>
-                <ul>
-                    <li>
-                        <b>Arriving Flights:</b> Please book a flight that allows you to get transportation from the
-                        airport to arrive in Reykjavík
-                        by 9am on April 17th to prep to board the 10am bus.
-                        Given the typical flight times its possible to arrive the same morning but we recommend arriving
-                        on the 16th and staying in Reykjavík.
-                    </li>
-                    <li>
-                        <b>Departing Flights</b> Please do not book a return flight on April 19th before 12pm. The
-                        wedding bus will not be able to
-                        get you to the airport in time for a morning flight.
-                    </li>
-                    <li>
-                        <b>Getting from the airport to the city:</b> The best way to get to Reykjavík (Iceland’s capitol
-                        city)
-                        from the airport is by taking the FLYBUS. You can book via this link:
-                        <a href="http://bit.ly/2m8cidZ" target="_blank">http://bit.ly/2m8cidZ</a>. The price is around
-                        4000 ISK (approx US$30 at todays exchange rate).
-                        We highly recommend you book your transfer before arrival as queues for tickets at the
-                        airport can become quite long.
-                        <p>
-                            You can also pre-book a taxi from the airport. The price is around 17.000 ISK (approx US$140
-                            at todays exchange rate).
-                            Please get in touch with <a href="mailto:hannes@pinkiceland.is">hannes@pinkiceland.is</a> to
-                            arrange this.
-                        </p>
-                    </li>
-                    <!--<li>
+            <section>
+                Travel and exploration has always been a big part of our
+                relationship. One of the first places we visited together was
+                Iceland, we loved it and <em>vowed</em> (😉 😉) to return.
+                Luckily we have got this wedding coming up and thought it would
+                be great to share what we loved so much with everyone else.
+            </section>
+
+            <div class="break"></div>
+
+            <!--<section id="itinerary">
+                <h2>Itinerary</h2>
+
+                <div class="timeline">
+                    <h2>Thursday April 16 2020</h2>
+                    <ul>
+                        <li>
+                            <h3>Please come to Reykjavík</h3>
+                            <p>
+                                So as not to delay us all, please arrive on the
+                                16th or very early on the 17th
+                            </p>
+                            <time>Any time you like</time>
+                        </li>
+                    </ul>
+                    <h2>Friday April 17 2020</h2>
+                    <ul>
+                        <li>
+                            <h3>Reykjavík</h3>
+                            <p>Catch the wedding bus</p>
+                            <time>10am</time>
+                        </li>
+                        <li>
+                            <h3>Tour</h3>
+                            <p>
+                                Come with us to see some fantastic parts of
+                                Iceland, with a stop for lunch
+                            </p>
+                            <time>Daytime</time>
+                        </li>
+                        <li>
+                            <h3>Arnarstapi</h3>
+                            <p>Arrive at the Hotel</p>
+                            <time>5pm</time>
+                        </li>
+                        <li>
+                            <h3>Rehearsal dinner</h3>
+                            <p>
+                                This is where you rehearse how to eat and drink.
+                                You will be tested on this the following
+                                evening.
+                            </p>
+                            <time>8pm</time>
+                        </li>
+                    </ul>
+
+                    <h2>Saturday April 18 2020</h2>
+                    <ul>
+                        <li>
+                            <h3>Hotel</h3>
+                            <p>Breakfast provided by the hotel</p>
+                        </li>
+                        <li>
+                            <h3>Hotel</h3>
+                            <p>Ride to the ceremony</p>
+                            <time>10am</time>
+                        </li>
+                        <li>
+                            <h3>Ceremony</h3>
+                            <p>Getting hitched</p>
+                            <time>11am</time>
+                        </li>
+                        <li>
+                            <h3>Sights and lunch</h3>
+                            <p>
+                                We try and get some photos in, you try and photo
+                                bomb us
+                            </p>
+                            <time>Daytime</time>
+                        </li>
+                        <li>
+                            <h3>Arnarstapi</h3>
+                            <p>Back to the hotel</p>
+                            <time>3pm</time>
+                        </li>
+                        <li>
+                            <h3>Reception</h3>
+                            <p>
+                                This is it, put that eating and drinking
+                                rehearsal into use
+                            </p>
+                            <time>6pm</time>
+                        </li>
+                    </ul>
+
+                    <h2>Sunday April 19 2020</h2>
+                    <ul>
+                        <li>
+                            <h3>Hotel</h3>
+                            <p>Breakfast provided by the hotel</p>
+                        </li>
+                        <li>
+                            <h3>Hotel</h3>
+                            <p>Hungover bus to Reykjavík</p>
+                            <time>11am</time>
+                        </li>
+                        <li>
+                            <h3>Reykjavík - BSÍ Bus Terminal</h3>
+                            <p>City drop off</p>
+                            <time>1:30pm</time>
+                        </li>
+                        <li>
+                            <h3>Reykjavík - Keflavík International Airport</h3>
+                            <p>Airport drop off</p>
+                            <time>2:15pm - 2:30pm</time>
+                        </li>
+                    </ul>
+                </div>
+            </section>-->
+
+            <!--<div class="break"></div>-->
+
+            <!--<section id="travel">
+                <h2>Travel & Accommodation</h2>
+                <article>
+                    <h3>Travel</h3>
+                    <ul>
+                        <li>
+                            <b>Arriving Flights:</b> Please book a flight that
+                            allows you to get transportation from the airport to
+                            arrive in Reykjavík by 9am on April 17th to prep to
+                            board the 10am bus. Given the typical flight times
+                            its possible to arrive the same morning but we
+                            recommend arriving on the 16th and staying in
+                            Reykjavík.
+                        </li>
+                        <li>
+                            <b>Departing Flights</b> Please do not book a return
+                            flight on April 19th before 12pm. The wedding bus
+                            will not be able to get you to the airport in time
+                            for a morning flight.
+                        </li>
+                        <li>
+                            <b>Getting from the airport to the city:</b> The
+                            best way to get to Reykjavík (Iceland’s capitol
+                            city) from the airport is by taking the FLYBUS. You
+                            can book via this link:
+                            <a href="http://bit.ly/2m8cidZ" target="_blank"
+                                >http://bit.ly/2m8cidZ</a
+                            >. The price is around 4000 ISK (approx US$30 at
+                            todays exchange rate). We highly recommend you book
+                            your transfer before arrival as queues for tickets
+                            at the airport can become quite long.
+                            <p>
+                                You can also pre-book a taxi from the airport.
+                                The price is around 17.000 ISK (approx US$140 at
+                                todays exchange rate). Please get in touch with
+                                <a href="mailto:hannes@pinkiceland.is"
+                                    >hannes@pinkiceland.is</a
+                                >
+                                to arrange this.
+                            </p>
+                        </li>
+                        <li>
                         <b>Car Rental:</b> If you are interested in travel before and/or after the wedding you can
                         take advantage of the discounts from our wedding planner. We encourage you to examine how
                         extensive your credit card insurance is since you may be able to save on the often very
@@ -216,190 +240,278 @@
                             (All lowercase)</p>
                         <p><a href="http://www.gocampers.is" target="_blank">www.gocampers.is</a> Promo Code:
                             pinkiceland (All lowercase)</p>
-                    </li>-->
-                    <li>
-                        <b>The Wedding Bus:</b> We are getting married in a remote part of Iceland so we are reserving
-                        a
-                        bus
-                        that will be <b>$150 USD</b>
-                        per person. Icelandic road conditions vary greatly so this will ensure everyone arrives safely
-                        and together. It is important
-                        that everyone is ready to board the bus in Reykjavík at 10am on Friday April 17th.
-                        <p>The bus includes</p>
-                        <ul>
-                            <li>Ride from Reykjavík to our <a href="https://arnarstapicenter.is/"
-                                    target="_blank">wedding venue</a> on the Snæfellsnes Peninsula</li>
-                            <li>A private guided tour of beautiful spots in Iceland</li>
-                            <li>Ride from Snæfellsnes to Reykjavik on Sunday after breakfast</li>
-                        </ul>
                     </li>
-                </ul>
-            </article>
-        </section>
+                        <li>
+                            <b>The Wedding Bus:</b> We are getting married in a
+                            remote part of Iceland so we are reserving a bus
+                            that will be <b>$150 USD</b>
+                            per person. Icelandic road conditions vary greatly
+                            so this will ensure everyone arrives safely and
+                            together. It is important that everyone is ready to
+                            board the bus in Reykjavík at 10am on Friday April
+                            17th.
+                            <p>The bus includes</p>
+                            <ul>
+                                <li>
+                                    Ride from Reykjavík to our
+                                    <a
+                                        href="https://arnarstapicenter.is/"
+                                        target="_blank"
+                                        >wedding venue</a
+                                    >
+                                    on the Snæfellsnes Peninsula
+                                </li>
+                                <li>
+                                    A private guided tour of beautiful spots in
+                                    Iceland
+                                </li>
+                                <li>
+                                    Ride from Snæfellsnes to Reykjavik on Sunday
+                                    after breakfast
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+            </section>-->
 
-        <div class="break"></div>
+            <!--<div class="break"></div>-->
 
-        <section id="rsvp">
-            <h2 v-if="!responded">RSVP</h2>
-            <form v-if="!responded" v-on:submit.prevent="onSubmit">
-                <fieldset>
-                    <legend>Name(s) *</legend>
-                    <input v-model="names" type="text" name="names" required>
-                </fieldset>
-                <fieldset>
-                    <legend>Can you come? *</legend>
-                    <label>
-                        <input v-model="response" type="radio" name="response" value="yes" required>
-                        <div>
-                            <p>Yes</p>
-                        </div>
-                    </label>
-                    <label>
-                        <input v-model="response" type="radio" name="response" value="no" required>
-                        <div>
-                            <p>No</p>
-                        </div>
-                    </label>
-                </fieldset>
-                <fieldset>
-                    <legend>Type of room</legend>
-                    <label v-for="option in roomOptions">
-                        <input v-model="room" type="radio" name="room" v-bind:value="option.value"
-                            :disabled="option.available == 0">
-                        <div>
-                            <p>{{option.name}}. {{ option.available }} available. €{{ option.price }} per night.</p>
-                        </div>
-                    </label>
-                    <label>
-                        <input v-model="room" type="radio" name="room" value="third-wheel">
-                        <div>
-                            <p>Find me a roomie!</p>
-                        </div>
-                    </label>
-                    <label>
-                        <input v-model="room" type="radio" name="room" value="dont-know">
-                        <div>
-                            <p>I don't know yet</p>
-                        </div>
-                    </label>
-                </fieldset>
-                <fieldset>
-                    <legend>Email *</legend>
-                    <input v-model="email" type="email" name="email" required>
-                </fieldset>
-                <fieldset>
-                    <legend>Phone *</legend>
-                    <input v-model="phone" type="tel" name="phone" required>
-                </fieldset>
-                <fieldset>
-                    <legend>Number coming *</legend>
-                    <input v-model="number" type="number" name="number" required>
-                </fieldset>
-                <fieldset>
-                    <legend>Dietary restrictions</legend>
-                    <input v-model="dietary" type="text" name="dietary">
-                </fieldset>
-                <fieldset>
-                    <legend>Leave us a message</legend>
-                    <textarea v-model="message" name="message"></textarea>
-                </fieldset>
-                <button type="submit">RSVP</button>
-            </form>
-            <loading v-if="loading"></loading>
-            <div v-if="success">
-                <h2>Thanks for responding!</h2>
-            </div>
-            <div v-if="error">
-                <h2>Something went wrong... Can you try again?</h2>
-            </div>
-        </section>
+            <!--<section id="rsvp">
+                <h2 v-if="!responded">RSVP</h2>
+                <form v-if="!responded" v-on:submit.prevent="onSubmit">
+                    <fieldset>
+                        <legend>Name(s) *</legend>
+                        <input
+                            v-model="names"
+                            type="text"
+                            name="names"
+                            required
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>Can you come? *</legend>
+                        <label>
+                            <input
+                                v-model="response"
+                                type="radio"
+                                name="response"
+                                value="yes"
+                                required
+                            />
+                            <div>
+                                <p>Yes</p>
+                            </div>
+                        </label>
+                        <label>
+                            <input
+                                v-model="response"
+                                type="radio"
+                                name="response"
+                                value="no"
+                                required
+                            />
+                            <div>
+                                <p>No</p>
+                            </div>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Type of room</legend>
+                        <label v-for="option in roomOptions">
+                            <input
+                                v-model="room"
+                                type="radio"
+                                name="room"
+                                v-bind:value="option.value"
+                                :disabled="option.available == 0"
+                            />
+                            <div>
+                                <p>
+                                    {{option.name}}. {{ option.available }}
+                                    available. €{{ option.price }} per night.
+                                </p>
+                            </div>
+                        </label>
+                        <label>
+                            <input
+                                v-model="room"
+                                type="radio"
+                                name="room"
+                                value="third-wheel"
+                            />
+                            <div>
+                                <p>Find me a roomie!</p>
+                            </div>
+                        </label>
+                        <label>
+                            <input
+                                v-model="room"
+                                type="radio"
+                                name="room"
+                                value="dont-know"
+                            />
+                            <div>
+                                <p>I don't know yet</p>
+                            </div>
+                        </label>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Email *</legend>
+                        <input
+                            v-model="email"
+                            type="email"
+                            name="email"
+                            required
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>Phone *</legend>
+                        <input
+                            v-model="phone"
+                            type="tel"
+                            name="phone"
+                            required
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>Number coming *</legend>
+                        <input
+                            v-model="number"
+                            type="number"
+                            name="number"
+                            required
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <legend>Dietary restrictions</legend>
+                        <input v-model="dietary" type="text" name="dietary" />
+                    </fieldset>
+                    <fieldset>
+                        <legend>Leave us a message</legend>
+                        <textarea v-model="message" name="message"></textarea>
+                    </fieldset>
+                    <button type="submit">RSVP</button>
+                </form>
+                <loading v-if="loading"></loading>
+                <div v-if="success">
+                    <h2>Thanks for responding!</h2>
+                </div>
+                <div v-if="error">
+                    <h2>Something went wrong... Can you try again?</h2>
+                </div>
+            </section>-->
 
-        <section id="faq">
-            <h2>FAQ</h2>
-            <article>
-                <h3>What should I wear...</h3>
-                <ul>
-                    <li>
-                        <b>To the tour:</b> Be warm and comfortable. Dress is travel casual. You will be hopping on and
-                        off
-                        the bus to see what Iceland has to offer.
-                    </li>
-                    <li>
-                        <b>To the rehearsal dinner:</b> Casual dinner dress.
-                    </li>
-                    <li>
-                        <b>To the ceremony:</b> Feel free to get creative but we truly want you to be warm and
-                        comfortable.
-                        Ali will be in a wedding dress and likely boots, Josh will be in something a bit fancier than a
-                        black t-shirt. Please dress warm, if you would like to wear a dress or suit we will not stop you
-                        but
-                        please bring layers. The ceremony is going to be outside, some sort of outdoor
-                        shoes are advisable. There is a surprise outing after the ceremony that will be outdoors.
-                    </li>
-                    <li>
-                        <b>To the reception:</b> Whatever wedding guest attire your heart desires. There will be drinks,
-                        food and dancing.
-                    </li>
-                </ul>
-            </article>
-            <article>
-                <h3>On plus ones</h3>
+            <!--<section id="faq">
+                <h2>FAQ</h2>
+                <article>
+                    <h3>What should I wear...</h3>
+                    <ul>
+                        <li>
+                            <b>To the tour:</b> Be warm and comfortable. Dress
+                            is travel casual. You will be hopping on and off the
+                            bus to see what Iceland has to offer.
+                            </li>
+                        <li>
+                            <b>To the rehearsal dinner:</b> Casual dinner dress.
+                        </li>
+                        <li>
+                            <b>To the ceremony:</b> Feel free to get creative
+                            but we truly want you to be warm and comfortable.
+                            Ali will be in a wedding dress and likely boots,
+                            Josh will be in something a bit fancier than a black
+                            t-shirt. Please dress warm, if you would like to
+                            wear a dress or suit we will not stop you but please
+                            bring layers. The ceremony is going to be outside,
+                            some sort of outdoor shoes are advisable. There is a
+                            surprise outing after the ceremony that will be
+                            outdoors.
+                        </li>
+                        <li>
+                            <b>To the reception:</b> Whatever wedding guest
+                            attire your heart desires. There will be drinks,
+                            food and dancing.
+                        </li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>On plus ones</h3>
+                    <p>
+                        Please reach out to us if you had hoped to bring a
+                        guest. We have limited space but its very possible that
+                        we will have room. Please just ask us!
+                    </p>
+                </article>
+                <article>
+                    <h3>On kiddos</h3>
+                    <p>
+                        We love your kids very much, but given the activities we
+                        have planned, we have chosen to make our wedding a 21
+                        and over event.
+                    </p>
+                </article>
+                <article>
+                    <h3>On gifts</h3>
+                    <p>
+                        The thing that we would love the most is for you to
+                        attend our wedding celebrations. If you feel very
+                        strongly about giving us a gift a contribution to our
+                        honeymoon fund would be greatly appreciated.
+                    </p>
+                </article>
+                <article>
+                    <h3>On onward or before travel</h3>
+                    <p>
+                        Hannes, our wedding planner extraordinaire has
+                        graciously offered his travel planning services to any
+                        guests who would like to visit Iceland early or extend
+                        their stay after the wedding. Please reach out to him by
+                        email
+                        <a href="mailto:hannes@pinkiceland.is" target="_blank"
+                            >hannes@pinkiceland.is</a
+                        >.
+                    </p>
+                </article>
+            </section>-->
+
+            <footer>
                 <p>
-                    Please reach out to us if you had hoped to bring a guest. We have limited space
-                    but its very possible that we will have room. Please just ask us!
+                    Contact
+                    <a
+                        href="mailto:alisonmarypeters+wedding@gmail.com"
+                        target="_blank"
+                        >Ali</a
+                    >
+                    or
+                    <a href="mailto:josh.fyne+wedding@gmail.com" target="_blank"
+                        >Josh</a
+                    >
+                    for questions
                 </p>
-            </article>
-            <article>
-                <h3>On kiddos</h3>
-                <p>
-                    We love your kids very much, but given the activities we have planned, we have chosen
-                    to make our wedding a 21 and over event.
-                </p>
-            </article>
-            <article>
-                <h3>On gifts</h3>
-                <p>
-                    The thing that we would love the most is for you to attend our wedding celebrations. If you
-                    feel very strongly about giving us a gift a contribution to our honeymoon fund would be
-                    greatly appreciated.
-                </p>
-            </article>
-            <article>
-                <h3>On onward or before travel</h3>
-                <p>
-                    Hannes, our wedding planner extraordinaire has graciously offered his travel planning services
-                    to any guests who would like to visit Iceland early or extend their stay after the wedding. Please
-                    reach out to him by email <a href="mailto:hannes@pinkiceland.is"
-                        target="_blank">hannes@pinkiceland.is</a>.
-                </p>
-            </article>
-        </section>
+            </footer>
+        </div>
 
-        <footer>
-            <p>
-                Contact <a href="mailto:alisonmarypeters+wedding@gmail.com" target="_blank">Ali</a> or <a
-                    href="mailto:josh.fyne+wedding@gmail.com" target="_blank">Josh</a> for questions
-            </p>
-        </footer>
-    </div>
-
-    <script src="/scripts/rsvp.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            try {
-                let app = firebase.app();
-                let features = ['firestore'].filter(feature => typeof app[feature] === 'function');
-                firebase.firestore().enablePersistence({
-                    synchronizeTabs: true
-                }).then(() => {
-                    new Vue(rsvp);
-                    console.log('Initialised')
-                });
-            } catch (e) {
-                console.error(e);
-            }
-        });
-    </script>
-</body>
-
+        <!--<script src="/scripts/rsvp.js"></script>-->
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                try {
+                    let app = firebase.app();
+                    let features = ["firestore"].filter(
+                        feature => typeof app[feature] === "function"
+                    );
+                    firebase
+                        .firestore()
+                        .enablePersistence({
+                            synchronizeTabs: true
+                        })
+                        .then(() => {
+                            new Vue(rsvp);
+                            console.log("Initialised");
+                        });
+                } catch (e) {
+                    console.error(e);
+                }
+            });
+        </script>
+    </body>
 </html>
